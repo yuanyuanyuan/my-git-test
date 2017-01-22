@@ -1,0 +1,39 @@
+ul,li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+#msgContent li {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px 0;
+}
+#msgScreen{
+    width: 50%;
+    height: 300px;
+    overflow: auto;
+    border: solid red;
+}
+#sendChooseDiv {
+    display: none;
+}
+#memberChoose,#inputDiv,#sendChoose{
+    display: inline-block;
+}
+.avatar {
+    width: 25px;
+    height: 25px;
+}
+.msg{
+    max-width: 65%;
+    font-size: 12px;
+    box-sizing: border-box;
+    margin: 0 6px;
+    padding: 10px;
+    border: 1px solid #d9d9d9;
+    border-radius: 5px;
+    background: linear-gradient(#ffffff, #f2f2f2);
+    box-shadow: 1px 1px 3px #e6e6e6;
+    word-break: break-all;
+    text-align: left;
+}
