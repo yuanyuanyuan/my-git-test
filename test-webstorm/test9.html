@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<div id="vvv">
+    <span>{{message}}</span>
+    <button v-on:click="test">点击</button>
+</div>
+
+<div id="test" style="position: fixed;top:0">{{ txt }}</div>
+
+<div id="parent">
+    <my-awesome-list :items="items">
+        <!-- 作用域插槽也可以在这里命名 -->
+        <template slot="item" scope="props">
+            <li class="my-fancy-item">{{ props.text }}</li>
+        </template>
+    </my-awesome-list>
+</div>
+
+
+<script src="js/vue.js"></script>
+<!--<script src="js/jquery.min.js"></script>-->
+<script>
+        new Vue({
+            el: '#vvv',
+            data : {
+//                message:'aa'
+                message:[
+                    {text:"aa"},
+                    {text:"bb"}
+                ]
+            },
+            methods:{
+                test: function () {
+                    this.message = [
+                        {text:"cc"},
+                        {text:"dd"}
+                    ];
+                }
+            }
+        });
+        var orderDetail = new Vue({
+            el: '#test',
+            data: {txt: 'hihihi'}
+        });
+        orderDetail.txt = 'okokok';
+
+//    Vue.component('my-awesome-list', {
+//        props:['items'],
+//        template: '\
+//            <ul> \
+//                <slot name="item" v-for="item in items" :text="item.text"> \
+//                </slot> \
+//            </ul> \
+//        '
+//    });
+//    new Vue({
+//        el: '#parent',
+//        data : {
+//            items:[
+//                {text:"aa"},
+//                {text:"bb"}
+//            ]
+//        }
+//    })
+</script>
+</body>
+</html>

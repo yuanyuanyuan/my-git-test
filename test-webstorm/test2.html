@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.7.1/css/amazeui.min.css">
+    <style>
+        html, body {
+            background-color: black;
+            height: 100%;
+        }
+
+        #goods-standard {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            background: white;
+        }
+        #goods-standard h1,h2,h3 {
+            margin-top: 1rem;
+        }
+
+        /*[class*=am-u-]{*/
+        /*padding-left: 0;*/
+        /*padding-right: 0;*/
+        /*}*/
+        #goods-standard .am-btn-sm {
+            margin: 0 1rem 0.5rem 0;
+        }
+
+        #goods-standard .am-thumbnail {
+            margin-top: -2rem;
+            margin-bottom: 1rem;
+        }
+
+        .am-scrollable-vertical{
+            resize: none;
+            height: 400px;
+        }
+        .goods-standard-price {
+            font-size: 1.4rem;
+            display: block;
+            margin-top: 1rem;
+        }
+
+        .goods-standard-stock {
+            font-size: 1.4rem;
+            display: block;
+        }
+
+        .goods-standard-slected {
+            font-size: 1.4rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .goods-standard-close {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+
+
+<div id="buyer-report" class="am-g">
+    <div class="am-u-sm-5 goods-standard-img">
+        <img id="goods-standard-img" class="am-thumbnail" src="assets/IMG_1901.PNG">
+    </div>
+
+    <div class="am-u-sm-7">
+        <span class="goods-standard-price">￥199</span>
+        <span class="goods-standard-stock">库存2件</span>
+        <span class="goods-standard-slected">已选:"A款 小茶壶"</span>
+        <a href="" class="am-close am-close-alt goods-standard-close">&times;</a>
+    </div>
+
+    <div class="am-u-sm-12">
+        <hr>
+        <div class="am-scrollable-vertical">
+            <h2>颜色分类</h2>
+            <button type="button" class="am-btn am-btn-default am-btn-sm am-round">黄色</button>
+            <button type="button" class="am-btn am-btn-default am-btn-sm am-round">白色</button>
+            <button type="button" class="am-btn am-btn-default am-btn-sm am-round">黑色</button>
+            <button type="button" class="am-btn am-btn-default am-btn-sm am-round">绿色</button>
+            <button type="button" class="am-btn am-btn-default am-btn-sm am-round">黄色</button>
+            <button type="button" class="am-btn am-btn-default am-btn-sm am-round">白色</button>
+            <button type="button" class="am-btn am-btn-default am-btn-sm am-round">黑色</button>
+            <button type="button" class="am-btn am-btn-default am-btn-sm am-round">绿色</button>
+            <hr>
+            <h2>规格分类</h2>
+            <button type="button" class="am-btn am-btn-default am-btn-sm am-round">A款 小茶杯</button>
+            <button type="button" class="am-btn am-btn-default am-btn-sm am-round">默认样式</button>
+            <button type="button" class="am-btn am-btn-default am-btn-sm am-round">默认样式</button>
+            <button type="button" class="am-btn am-btn-default am-btn-sm am-round">D款 小茶杯呵呵</button>
+            <hr>
+            <div class="am-cf">
+                <div class="am-fl">
+                    <h2>购买数量</h2>
+                </div>
+                <div class="am-fr">
+                    <button type="button" class="am-btn am-btn-default am-btn-sm">-</button>
+                    <div style="display: inline-block">1</div>
+                    <button type="button" class="am-btn am-btn-default am-btn-sm">+</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="am-u-sm-12">
+        <button type="button" class="am-btn am-btn-danger am-btn-block">确定</button>
+    </div>
+</div>
+
+
+</body>
+</html>

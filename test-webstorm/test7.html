@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<link rel="stylesheet" href="css/test7.css">-->
+</head>
+<body>
+
+
+<div id="ooo">
+    <input
+            type="checkbox"
+            v-model="toggle"
+            v-bind:true-value="a"
+            v-bind:false-value="b"
+    >
+</div>
+
+
+<div id="todo-list-example">
+    <!--使用了v-model先忽略-->
+    <!--v-on绑定keyup.enter按键的事件是addNewTodo-->
+    <input
+            v-model="newTodoText"
+            v-on:keyup.enter="addNewTodo"
+            placeholder="Add a todo"
+    >
+    <ul>
+    <!--v-bind绑定数据传到子组件的props为todo-->
+        <!--v-on绑定一个remove事件,作为可以传递给click的事件-->
+        <li
+                is="todo-item"
+                v-for="(todo, index) in todos"
+                v-bind:title="todo"
+                v-on:remove="todos.splice(index, 1)"
+        ></li>
+    </ul>
+</div>
+
+<script src="js/vue.js"></script>
+<script>
+    var app2 = new Vue({
+        el: '#ooo',
+        data: {
+            toggle: "no",
+            a:"has",
+            b:"no"
+        }
+    })
+
+//    Vue.component('todo-item', {
+//        //$emit触发当前实例上的事件。附加参数都会传给监听器回调。
+//        //v-on绑定一个click,其实就是绑定了一个click去触发里面封装好的remove,
+//        template: '\
+//            <li>\
+//              {{ title }}\
+//              <button v-on:click="$emit(\'remove\')">X</button>\
+//            </li>\
+//          ',
+//        props: ['title']
+//    })
+//    new Vue({
+//        el: '#todo-list-example',
+//        data: {
+//            newTodoText: '',
+//            todos: [
+//                'Do the dishes',
+//                'Take out the trash',
+//                'Mow the lawn'
+//            ]
+//        },
+//        methods: {
+//            addNewTodo: function () {
+//                this.todos.push(this.newTodoText)
+//                this.newTodoText = ''
+//            }
+//        }
+//    })
+</script>
+</body>
+</html>

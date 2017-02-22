@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.7.1/css/amazeui.min.css">
+    <style>
+        html, body {
+            background-color: black;
+            height: 100%;
+        }
+
+        #goods-standard {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            background: white;
+        }
+        #goods-standard h1,h2,h3 {
+            margin-top: 1rem;
+        }
+
+        #goods-standard .am-btn-sm {
+            margin: 0 1rem 0.5rem 0;
+        }
+
+        #goods-standard .am-thumbnail {
+            margin-top: -2rem;
+            margin-bottom: 1rem;
+        }
+
+        .am-scrollable-vertical{
+            resize: none;
+            height: 400px;
+        }
+        .goods-standard-price {
+            font-size: 1.4rem;
+            display: block;
+            margin-top: 1rem;
+        }
+
+        .goods-standard-stock {
+            font-size: 1.4rem;
+            display: block;
+        }
+
+        .goods-standard-slected {
+            font-size: 1.4rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .goods-standard-close {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+
+        .am-btn-active{
+            background: #F37B1D;
+            border-color: #F37B1D;
+            color: white;
+        }
+        .am-btn-default:focus,.am-btn-default:hover{
+            background: #F37B1D;
+            border-color: #F37B1D;
+            color: white;
+        }
+
+        .buy-count{
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+<div id="goods-standard" class="am-g">
+    <div class="am-u-sm-5 goods-standard-img">
+        <img id="goods-standard-img" class="am-thumbnail" src="assets/IMG_1901.PNG">
+    </div>
+
+    <div class="am-u-sm-7">
+        <span class="goods-standard-price">￥199</span>
+        <span class="goods-standard-stock">库存2件</span>
+        <span class="goods-standard-slected">已选:"A款 小茶壶"</span>
+        <a href="" class="am-close am-close-alt goods-standard-close">&times;</a>
+    </div>
+
+    <div class="am-u-sm-12">
+        <hr>
+        <div class="am-scrollable-vertical">
+            <div>
+                <h2>颜色分类</h2>
+                <button  type="button" data-v1="黄色" class="color-get-btn am-btn am-btn-default am-btn-sm am-round">黄色</button>
+                <button  type="button" data-v1="白色" class="color-get-btn am-btn am-btn-default am-btn-sm am-round ">白色</button>
+                <button type="button" data-v1="黑色" class=" color-get-btn am-btn am-btn-default am-btn-sm am-round">黑色</button>
+                <button  type="button" data-v1="绿色" class="color-get-btn am-btn am-btn-default am-btn-sm am-round">绿色</button>
+                <button  type="button" data-v1="黄色" class=" color-get-btn am-btn am-btn-default am-btn-sm am-round">黄色</button>
+                <button type="button" class="am-btn am-btn-default am-btn-sm am-round">白色</button>
+                <button type="button" class="am-btn am-btn-default am-btn-sm am-round">黑色</button>
+                <button type="button" class="am-btn am-btn-default am-btn-sm am-round">绿色</button>
+                <hr>
+            </div>
+            <div>
+                <h2>规格分类</h2>
+                <button type="button" data-v2="A款 小茶杯" class="standard-get-btn am-btn am-btn-default am-btn-sm am-round">A款 小茶杯</button>
+                <button type="button" data-v2="默认pp样式" class="standard-get-btn am-btn am-btn-default am-btn-sm am-round">默认pp样式</button>
+                <button type="button" data-v2="默认aa样式" class="standard-get-btn am-btn am-btn-default am-btn-sm am-round">默认aa样式</button>
+                <button type="button" data-v2="D款 小茶杯呵呵" class="standard-get-btn am-btn am-btn-default am-btn-sm am-round">D款 小茶杯呵呵</button>
+                <hr>
+            </div>
+            <div class="am-cf">
+                <div class="am-fl">
+                    <h2>购买数量</h2>
+                </div>
+                <div class="am-fr">
+                    <button type="button" class="count-minus-btn am-btn am-btn-default am-btn-sm">-</button>
+                    <div class="buy-count" data-v3="1">1</div>
+                    <button type="button" class="count-add-btn am-btn am-btn-default am-btn-sm">+</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="am-u-sm-12">
+        <button type="button" class="am-btn am-btn-danger am-btn-block">确定</button>
+    </div>
+</div>
+<script src="js/goodspage/jquery.min.js"></script>
+<script>
+
+    var testLocalstore = window.localStorage;
+    testLocalstore.clear();
+    testLocalstore['count']=1;
+
+    $('.color-get-btn').click(function () {
+        $(this).addClass('am-btn-active');
+        $(this).siblings().removeClass('am-btn-active');
+        testLocalstore['color']=$(this).data('v1');
+//        alert($(this).data('v1'));
+    });
+
+    $('.standard-get-btn').click(function () {
+//        alert($(this).data('v2'));
+        $(this).addClass('am-btn-active');
+        $(this).siblings().removeClass('am-btn-active');
+        testLocalstore['standard']=$(this).data('v2');
+        console.log(6, '颜色分类是' + testLocalstore.getItem('color') + ',套餐是' + testLocalstore.getItem('standard') ,10);
+    });
+
+    $('.count-add-btn').click(function () {
+        var tmp = $('.buy-count').data('v3');
+        $('.buy-count').text(tmp+1);
+        testLocalstore['count']=$(this).data('v3');
+    });
+    $('.count-minus-btn').click(function () {
+        var tmp = $('.buy-count').data('v3');
+        $('.buy-count').text(tmp-1);
+        testLocalstore['count']=$(this).data('v3');
+    });
+
+
+
+</script>
+</body>
+</html>

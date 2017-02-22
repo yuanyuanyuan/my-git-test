@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用IQ宝宝，宝宝智商高</title>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=7">
+    <style>
+        /*html, body {*/
+        /*width: 100%;*/
+        /*height: 100%;*/
+        /*margin: 0;*/
+        /*padding: 0;*/
+        /*}*/
+
+        /*.download-bar, .download-bar img {*/
+        /*width: 100%;*/
+        /*position: fixed;*/
+        /*}*/
+
+        /*.main {*/
+        /*width: 100%;*/
+        /*height: 100%;*/
+        /*background: url("assets/bg.jpg") no-repeat;*/
+        /*background-size: 100% 100%;*/
+        /*}*/
+    </style>
+
+</head>
+<body>
+
+<p id="aaa">dasdasdasdasdas</p>
+<div id="bbb">
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+    <p>4</p>
+</div>
+
+<div class="time-item">
+    <img src="">
+    <span>今日限时抢:</span>
+    <div id="limit-time-not-start">
+        尚未开始
+    </div>
+    <div id="limit-time-start">
+        <span id="hour_show">0</span>
+        <span>:</span>
+        <span id="minute_show">0</span>
+        <span>:</span>
+        <span id="second_show">0</span>
+    </div>
+</div>
+
+<div id="myBtn">myBtn</div>
+<img id="myImg" src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png">
+
+<ul id="myLinks">
+    <li id="test1" data-myname="haha" class="class1 class2">test1</li>
+    <li id="test2" class="class">test2</li>
+</ul>
+
+<button id="myButton">aaaaaaa</button>
+
+<script src="js/goodspage/jquery.min.js"></script>
+<script>
+
+    //    var btn = document.getElementById("myBtn");
+    //    var handler = function (event) {
+    //        switch (event.type) {
+    //            case "click":
+    //                alert("Clicked");
+    //                break;
+    //            case "mouseover":
+    //                event.target.style.backgroundColor = "red";
+    //                break;
+    //            case "mouseout":
+    //                event.target.style.backgroundColor = "";
+    //                break;
+    //        }
+    //    };
+    //    btn.onclick = handler;
+    //    btn.onmouseover = handler;
+    //    btn.onmouseout = handler;
+    //    var link = document.getElementById("myLink");
+    //    link.onclick = function (event) {
+    //        event.preventDefault();
+    //    };
+    //    var btn = document.getElementById("myBtn");
+    //    btn.onclick = function (event) {
+    //        alert("mgBtn click");
+    //        //如果没有屏蔽传播的话,会出现两次alert,因为事件会传播到body,也会被捕获然后执行
+    //        event.stopPropagation();
+    //    };
+    //    document.body.onclick = function (event) {
+    //        alert("body click");
+    //    }
+    //    var btn = document.getElementById("myBtn");
+    //    btn.onclick = function (event) {
+    //        alert("btn:" + event.eventPhase); //返回2
+    //    };
+    //    document.body.addEventListener("click", function (event) {
+    //        alert("body-1:" + event.eventPhase);//返回1
+    //    }, true); // 这里是true代表在捕获阶段
+    //
+    //    document.body.onclick = function (event) {
+    //        alert("body-2:" + event.eventPhase);//返回3
+    //    }
+    //    window.addEventListener("load",function (event) {
+    //        alert("loaded");
+    //    })
+    //    var img = document.getElementById("myImg");
+    //    img.addEventListener("load",function (event) {
+    //        //这个加载是指图片完全加载完成,包括下载成功
+    //        alert(event.src);
+    //    });
+    //    window.addEventListener("load", function (event) {
+    //        //创建了img元素
+    //        var img = document.createElement("img");
+    //        //添加load事件监听
+    //        img.addEventListener("load", function (event) {
+    //            alert("aa");
+    //        });
+    //        //输出到dom树
+    //        document.body.appendChild(img);
+    //        //设置src后,img才会开始加载
+    //        img.src = "https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png";
+    //    })
+    //    window.addEventListener("load", function (event) {
+    //        //创建了script元素
+    //        var script = document.createElement("script");
+    //        //添加load事件监听
+    //        script.addEventListener("load", function (event) {
+    //            alert("Loaded");
+    //        });
+    //        //script设置src后,并且添加到dom树后才会开始加载
+    //        script.src = "https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.js";
+    //        //输出到dom树
+    //        document.body.appendChild(script);
+    //    })
+    //    window.addEventListener("unload", function (event) {
+    //        alert("aaa");
+    //    })
+
+
+    //    window.addEventListener("hashchange", function (event) {
+    //        console.log(event);
+    ////        console.log("old url:" + event.oldURL + "new url:" + event.newURL);
+    //    },false);
+    //        window.addEventListener("orientationChange",function (event) {
+    //            console.log(window.orientation);
+    //        })
+    //    function alertObj(obj) {
+    //        var output = "";
+    //        for (var i in obj) {
+    //            var property = obj[i];
+    //            output += i + " = " + property + "\n";
+    //        }
+    //        console.log(output);
+    //    }
+
+    //    function handleTouchEvent(event) {
+    //        //只跟踪一次触摸
+    //        if (event.touches.length == 1) {
+    //            switch (event.type) {
+    //                case "touchstart":
+    //                    console.log("touch stared(" + event.touches[0].clientX + "," + event.touches[0].clientY + ")");
+    //                    break;
+    //                case "touchend":
+    //                    console.log("touch end(" + event.changedTouches[0].clientX + "," + event.changedTouches[0].clientY + ")");
+    //                    break;
+    //                case "touchmove":
+    //                    //阻止默认滚动行为
+    //                    event.preventDefault();
+    //                    console.log("touch moved(" + event.changedTouches[0].clientX + "," + event.changedTouches[0].clientY + ")");
+    //                    break;
+    //            }
+    //        }
+    //    }
+    //    window.addEventListener("touchstart", handleTouchEvent);
+    //    window.addEventListener("touchend", handleTouchEvent);
+    //    window.addEventListener("touchmove", handleTouchEvent);
+
+    //    var list = document.getElementById("myLinks");
+    //    list.addEventListener("click",function (event) {
+    //        //event事件对象有target属性,里面还有id
+    //        switch (event.target.id){
+    //            case "test1":
+    //                console.log("test111111");
+    //                break;
+    //            case "test2":
+    //                console.log("test22222");
+    //                break;
+    //        }
+    //    });
+
+    //    function matchesSelector(element, selector) {
+    //        if (element.matchesSelector) {
+    //            return element.matchesSelector(selector);
+    //        } else if (element.msMatchesSelector) {
+    //            return element.msMatchesSelector(selector);
+    //        } else if (element.mozMatchesSelector) {
+    //            return element.mozMatchesSelector(selector)
+    //        } else if (element.webkitMatchesSelector) {
+    //            return element.webkitMatchesSelector(selector);
+    //        } else {
+    //            throw new Error("Not supported");
+    //        }
+    //    }
+
+    //    var i,len,child = element.firstChild;
+    //    //旧方式
+    //    while(child != element.lastChild){
+    //        if(child.nodeType == 1){ //需要判断是不是元素,因为有可能是空白文本节点
+    //            processChild(child);
+    //        }
+    //        child = child.nextSibling;
+    //    }
+    //    //新方式
+    //    while (child != element.lastElementChild){ //这里不需要判断了
+    //        processChild(child);
+    //        child = child.nextElementSibling;
+    //    }
+    //    console.log(document.getElementsByClassName("class"));
+
+    //    console.log(document.getElementById("test1").className.split(/\s+/));
+//    var div = document.getElementById("test1");
+//    //将class组成一个数组
+//    var classNames = div.className.split(/\s+/);
+//    var pos = -1, i;
+//    var len = classNames.length;
+//    for (i = 0; i < len; i++) {
+//        //只要这个数组里面有要删除的classs
+//        if (classNames[i] == "class2") {
+//            pos = i;
+//            break;
+//        }
+//    }
+//    //删除class组成的数组的一个元素,这个元素就是刚才匹配我们要删除的元素
+//    classNames.splice(pos, 1);
+//    //重新将数组组成一个字符串,赋值到html元素的的className
+//    div.className = classNames.join(" ");
+//    var div = document.getElementById("test1");
+//    console.log(div.classList);
+//    console.log(div.classList.remove("class1"));
+//    console.log(div.classList.add("class3"));
+//    console.log(div.classList.toggle("class2"));
+
+//    var button = document.getElementById("myButton");
+//    //只要有元素活的焦点,文档也就也有焦点
+//    button.focus();
+//    //确定文档是否获得焦点两种方式
+//    console.log(document.activeElement === button);//返回true
+//    console.log(document.hasFocus());//返回true
+
+//        var div = document.getElementById("test1");
+//        console.log(div.dataset.myname);//返回haha
+//        div.dataset.myname = "lala";
+//        console.log(div.dataset.myname); //修改为lala
+//    var div = document.getElementById("test1");
+    //    div.innerHTML = "<p>adasda</p>" +
+    //        "<input type='text'>";
+//
+//    div.style.backgroundColor = "red";
+//    div.style.width = "100px";
+</script>
+
+<!--<input typeof="button" value="click me" onclick="showMessage()"/>-->
+</body>
+</html>
