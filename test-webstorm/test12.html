@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="main" v-cloak>
+    <h1>Services</h1>
+    <ul>
+        <!--v-for遍历,绑定click监听,切换active-->
+        <!--将currency filter的写法更换为toFixed-->
+        <li v-for="item in items" @click="toggleActive(item)" :class="{'active':item.active}">{{item.name}}<span>{{item.price.toFixed(2)}}</span>
+        </li>
+    </ul>
+    <!--这里注意的是直接使用vue的方法的写法-->
+    <p>Total: <span>{{total()}}</span></p>
+</div>
+<script src="js/vue.js"></script>
+<script>
+    var demo = new Vue({
+        el: '#main',
+        data: {
+            items: [
+                {
+                    name: 'Web Development',
+                    price: 300,
+                    active: false
+                }, {
+                    name: 'Design',
+                    price: 400,
+                    active: false
+                }, {
+                    name: 'Integration',
+                    price: 250,
+                    active: false
+                }, {
+                    name: 'Training',
+                    price: 220,
+                    active: false
+                }
+            ]
+        },
+        methods: {
+            toggleActive: function (i) {
+                i.active = !i.active; //简单的写法切换true/false
+            },
+            total: function () {
+                var total = 0;
+                this.items.forEach(function (s) { //用js的forEach遍历数组
+                    if (s.active) { //只要判断active才会处理计算
+                        total += s.price;
+                    }
+                });
+                return total.toFixed(2);//将currency filter的写法更换
+            }
+        }
+    });
+</script>
+</body>
+</html>
