@@ -172,9 +172,106 @@
 // console.log(message)
 // //返回<p>&lt;script&gt;alert("abc")&lt;/script&gt; has sent you a message.</p>
 
-tag`First line\nSecond line`
+// tag`First line\nSecond line`
+//
+// function tag(strings) {
+//     console.log(strings.raw[0]);
+//     // "First line\\nSecond line"
+// }
 
-function tag(strings) {
-    console.log(strings.raw[0]);
-    // "First line\\nSecond line"
-}
+// console.log(Number.isFinite(15)); // true
+// console.log(Number.isFinite(0.8)); // true
+// console.log(Number.isFinite(NaN)); // false
+// console.log(Number.isFinite(Infinity)); // false
+// console.log(Number.isFinite(-Infinity)); // false
+// console.log(Number.isFinite('foo')); // false
+// console.log(Number.isFinite('15')); // false
+// console.log(Number.isFinite(true)); // false
+
+// Number.isNaN()用来检查一个值是否为NaN。
+
+// console.log(Number.isNaN(NaN)) // true
+// console.log(Number.isNaN(15)) // false
+// console.log(Number.isNaN('15')) // false
+// console.log(Number.isNaN(true)) // false
+// console.log(Number.isNaN(9/NaN)) // true
+// console.log(Number.isNaN('true'/0)) // true
+// console.log(Number.isNaN('true'/'true')) // true
+
+// console.log(Number.isInteger(25)) // true
+// console.log(Number.isInteger(25.0)) // true
+// console.log(Number.isInteger(25.1)) // false
+// console.log(Number.isInteger("15")) // false
+// console.log(Number.isInteger(true)) // false
+
+// function withinErrorMargin (left, right) {
+//     return Math.abs(left - right) < Number.EPSILON;
+// }
+// console.log(withinErrorMargin(0.1 + 0.2, 0.3))
+// // true
+// console.log(withinErrorMargin(0.2 + 0.2, 0.3))
+// // false
+
+// console.log(Math.pow(2, 53)); // 9007199254740992
+// console.log(Number.MAX_SAFE_INTEGER === Math.pow(2, 53) + 1)//false
+// console.log(Number.MAX_SAFE_INTEGER === Math.pow(2, 53) - 1) //true
+
+// console.log(Number.isSafeInteger(Number.MIN_SAFE_INTEGER - 1)) // false
+// console.log(Number.isSafeInteger(Number.MIN_SAFE_INTEGER)) // true
+// console.log(Number.isSafeInteger(Number.MAX_SAFE_INTEGER)) // true
+// console.log(Number.isSafeInteger(Number.MAX_SAFE_INTEGER + 1)) // false
+
+// Math.trunc方法用于去除一个数的小数部分，返回整数部分
+
+// console.log(Math.trunc(4.1)) // 4
+// console.log(Math.trunc(4.9)) // 4
+// console.log(Math.trunc(-4.1)) // -4
+// console.log(Math.trunc(-4.9)) // -4
+// console.log(Math.trunc(-0.1234)) // -0
+
+
+// console.log(Math.sign(-5)) // -1
+// console.log(Math.sign(5)) // 1
+// console.log(Math.sign(0)) // 0
+// console.log(Math.sign(-0)) // -0
+// console.log(Math.sign(NaN)) // NaN
+// console.log(Math.sign('foo')); // NaN
+// console.log(Math.sign());      // NaN
+
+// console.log(2 ** 2) // 4
+// console.log(2 ** 3) // 8
+//
+// //数运算符可以与等号结合，形成一个新的赋值运算符（**=）
+// let a = 2;
+// console.log(a **= 2);
+// 等同于 a = a * a;
+
+// let arrayLike = {
+//     '0': 'a',
+//     '1': 'b',
+//     '2': 'c',
+//     length: 3
+// };
+//
+// // ES5的写法
+// var arr1 = [].slice.call(arrayLike);
+// console.log(arr1);// ['a', 'b', 'c']
+// // ES6的写法
+// let arr2 = Array.from(arrayLike);
+// console.log(arr2);// ['a', 'b', 'c']
+
+
+
+// // arguments对象
+// function foo() {
+//     var args = Array.from(arguments);
+//     return args;
+// }
+//
+// console.log(foo(1,2,'a')); //[ 1, 2, 'a' ]
+
+console.log(Array.from('hello')) //字符串有Iterator接口
+// ['h', 'e', 'l', 'l', 'o']
+
+let namesSet = new Set(['a', 'b']) //Set结构的也有Iterator接口
+console.log(Array.from(namesSet)) // ['a', 'b']
