@@ -2,9 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<p>aaa</p>
+<p>222</p>
+<p>333</p>
+<p>4</p>
+<p>5</p>
+<script type="text/javascript">
+    let ps = document.querySelectorAll('p');
+    console.log(ps);// NodeList[5] 0:p 1:p 2:p 3:p 4:p,是一个对象
+    console.log(Array.from(ps));//转换为数组了,Array[5]0:p 1:p 2:p 3:p 4:p
+    Array.from(ps).forEach(function (p) {
+        console.log(p);//直接输出每一个数组元素的outerHTML,即<p>aaa</p><p>222</p>......
+    });
+</script>
 </body>
 </html>
