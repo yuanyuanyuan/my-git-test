@@ -1,10 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
+    <meta charset="utf-8" />
+    <title>视差滚动</title>
+    <script type="text/javascript"></script>
+    <style type="text/css">
+        .article{
+            /*heigh主要为了看效果,高度差比较大的话,效果会很明显*/
+            height: 800px;
+            /*其他参数只是为了保证图片不重复的填充满背景空间,主要关注background-attachment: fixed*/
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center center;
+            background-size: cover;
+        }
+        /*两个区域分别引入两张背景图*/
+        .section1{
+            background-image: url( QQ图片20170310174033.png);
+        }
+        .section2{
+            background-image: url( QQ图片20170315110020.jpg);
+        }
+    </style>
 </head>
 <body>
-$END$
+<div class="article section1">
+    每当我加班凌晨，独自一人走在黑暗的回家路上
+</div>
+<div class="article section2">
+    我会想起那天夕阳下的奔跑
+</div>
 </body>
 </html>
