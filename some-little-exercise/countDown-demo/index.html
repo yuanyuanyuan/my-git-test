@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id='inputTime' type="text" placeholder="eg:2018-03-03">
+<button id="submit">set</button>
+<div>
+    结果:
+    <p id="view"></p>
+</div>
+<script>
+
+    var inputTime = document.getElementById('inputTime');
+    var submitBtn = document.getElementById('submit');
+
+    submitBtn.addEventListener('click', function () {
+        countDownFunc();
+    }, false);
+
+    //倒计时func
+    var countDownFunc = function(){
+        setInterval(function () {
+            var dstTime = new Date((inputTime.value));
+            var now = new Date();
+            var time = (dstTime - now) / 1000;
+            console.log(time);
+            // 秒转化为小时，分钟，天
+            var day = Math.floor(time / (24 * 60 * 60));
+            var hour = Math.floor(time % (24 * 60 * 60) / (60 * 60));
+            var minute = Math.floor(time % (24 * 60 * 60) % (60 * 60) / 60);
+            var second = Math.floor(time % (24 * 60 * 60) % (60 * 60) % 60);
+
+
+            var str = "距离还剩下:" + day + "天" + hour + "时" + minute + "分" + second + "秒";
+            var _timmer = document.getElementById('view');
+            _timmer.innerHTML = str;
+        },1000)
+    };
+</script>
+</body>
+</html>
